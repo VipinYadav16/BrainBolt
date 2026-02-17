@@ -21,7 +21,7 @@ An intelligent quiz platform that adapts to your skill level in real-time, featu
 
 ## 📹 Demo
 
-> **📌 Demo video is located in the project root folder: `demo.mp4`**
+<video src="https://github.com/VipinYadav16/BrainBolt/raw/main/demo.mp4" controls="controls" style="max-width: 100%;"></video>
 
 The demo showcases:
 
@@ -489,6 +489,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-
 
 </div>
