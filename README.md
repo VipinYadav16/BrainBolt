@@ -421,12 +421,12 @@ npm run test -- --coverage
 <details>
 <summary><b>Backend (server/.env) - Already configured</b></summary>
 
-| Variable               | Required | Description                                  | Status |
-| ---------------------- | :------: | -------------------------------------------- | :----: |
-| `SUPABASE_URL`         |    ✅    | Supabase project URL                         | ✅ Set |
-| `SUPABASE_SERVICE_KEY` |    ✅    | Supabase service role key                    | ✅ Set |
-| `PORT`                 |    ❌    | Server port (default: 3001)                  | ✅ Set |
-| `FRONTEND_URL`         |    ❌    | CORS origin (default: http://localhost:8080) | ✅ Set |
+| Variable               | Required | Description                                  |   Status    |
+| ---------------------- | :------: | -------------------------------------------- | :---------: |
+| `SUPABASE_URL`         |    ✅    | Supabase project URL                         |   ✅ Set    |
+| `SUPABASE_SERVICE_KEY` |    ✅    | Supabase service role key                    |   ✅ Set    |
+| `PORT`                 |    ❌    | Server port (default: 3001)                  |   ✅ Set    |
+| `FRONTEND_URL`         |    ❌    | CORS origin (default: http://localhost:8080) |   ✅ Set    |
 | `REDIS_URL`            |    ❌    | Redis connection URL                         | ❌ Optional |
 
 </details>
