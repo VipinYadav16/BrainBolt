@@ -21,7 +21,7 @@ An intelligent quiz platform that adapts to your skill level in real-time, featu
 
 ## 📹 Demo
 
-[![Watch Demo](https://img.shields.io/badge/▶_Watch_Demo-Video-red?style=for-the-badge&logo=youtube)](https://github.com/VipinYadav16/BrainBolt/raw/main/demo.mp4)
+https://github.com/user-attachments/assets/d39c524d-a416-4fc5-940c-73825f7a9c42
 
 The demo showcases:
 
