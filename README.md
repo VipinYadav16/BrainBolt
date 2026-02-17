@@ -96,15 +96,13 @@ The demo showcases:
 git clone https://github.com/VipinYadav16/BrainBolt.git
 cd BrainBolt
 
-# Copy environment template and configure
-cp .env.example .env
-# Edit .env with your Supabase credentials (see Environment Setup below)
-
 # Start everything with one command
 docker-compose up --build
 ```
 
 **That's it!** Open http://localhost:8080
+
+> ✅ **No configuration needed!** The `.env` file with Supabase credentials is included in the repository for easy evaluation.
 
 ---
 
@@ -113,7 +111,6 @@ docker-compose up --build
 #### Prerequisites
 
 - Node.js 20+ or Bun
-- Supabase account (free tier works)
 
 #### 1. Install Dependencies
 
@@ -121,39 +118,11 @@ docker-compose up --build
 # Frontend
 bun install   # or npm install
 
-# Backend
+# Backend (optional)
 cd server && npm install && cd ..
 ```
 
-#### 2. Configure Environment
-
-Create `.env` in root:
-
-```env
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-key
-```
-
-Create `server/.env`:
-
-```env
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_KEY=your-service-key
-PORT=3001
-FRONTEND_URL=http://localhost:8080
-```
-
-#### 3. Setup Database
-
-```bash
-# Using Supabase CLI
-supabase db push
-
-# Or manually run migrations in Supabase SQL Editor
-# Files located in: supabase/migrations/
-```
-
-#### 4. Run Development Servers
+#### 2. Run Development Servers
 
 ```bash
 # Frontend (port 8080)
@@ -162,6 +131,23 @@ npm run dev
 # Backend API (port 3001) - optional, frontend works directly with Supabase
 cd server && npm run dev
 ```
+
+> ✅ **Environment is pre-configured!** The `.env` file is included with working Supabase credentials.
+
+<details>
+<summary><b>🔐 Using your own Supabase project (optional)</b></summary>
+
+If you want to use your own Supabase instance:
+
+1. Create a project at https://supabase.com
+2. Update `.env` with your credentials:
+   ```env
+   VITE_SUPABASE_URL=https://your-project.supabase.co
+   VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-key
+   ```
+3. Run migrations in Supabase SQL Editor (files in `supabase/migrations/`)
+
+</details>
 
 ---
 
@@ -420,26 +406,28 @@ npm run test -- --coverage
 
 ## 🔧 Environment Variables
 
-<details>
-<summary><b>Frontend (.env)</b></summary>
+> ✅ **Pre-configured!** The `.env` file is included in this repository with working Supabase credentials for easy evaluation. No setup required.
 
-| Variable                        | Required | Description              |
-| ------------------------------- | :------: | ------------------------ |
-| `VITE_SUPABASE_URL`             |    ✅    | Supabase project URL     |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` |    ✅    | Supabase anon/public key |
+<details>
+<summary><b>Frontend (.env) - Already configured</b></summary>
+
+| Variable                        | Required | Description              | Status |
+| ------------------------------- | :------: | ------------------------ | :----: |
+| `VITE_SUPABASE_URL`             |    ✅    | Supabase project URL     | ✅ Set |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` |    ✅    | Supabase anon/public key | ✅ Set |
 
 </details>
 
 <details>
-<summary><b>Backend (server/.env)</b></summary>
+<summary><b>Backend (server/.env) - Already configured</b></summary>
 
-| Variable               | Required | Description                                  |
-| ---------------------- | :------: | -------------------------------------------- |
-| `SUPABASE_URL`         |    ✅    | Supabase project URL                         |
-| `SUPABASE_SERVICE_KEY` |    ✅    | Supabase service role key                    |
-| `PORT`                 |    ❌    | Server port (default: 3001)                  |
-| `FRONTEND_URL`         |    ❌    | CORS origin (default: http://localhost:8080) |
-| `REDIS_URL`            |    ❌    | Redis connection URL                         |
+| Variable               | Required | Description                                  | Status |
+| ---------------------- | :------: | -------------------------------------------- | :----: |
+| `SUPABASE_URL`         |    ✅    | Supabase project URL                         | ✅ Set |
+| `SUPABASE_SERVICE_KEY` |    ✅    | Supabase service role key                    | ✅ Set |
+| `PORT`                 |    ❌    | Server port (default: 3001)                  | ✅ Set |
+| `FRONTEND_URL`         |    ❌    | CORS origin (default: http://localhost:8080) | ✅ Set |
+| `REDIS_URL`            |    ❌    | Redis connection URL                         | ❌ Optional |
 
 </details>
 
