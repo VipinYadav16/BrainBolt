@@ -21,7 +21,11 @@ An intelligent quiz platform that adapts to your skill level in real-time, featu
 
 ## 📹 Demo
 
-<video src="https://github.com/VipinYadav16/BrainBolt/raw/main/demo.mp4" controls="controls" style="max-width: 100%;"></video>
+<video src="h
+
+ttps://github.com/VipinYadav16/BrainBolt/raw/main/demo.mp4" controls="controls" style="max-width: 100%;">
+
+</video>
 
 The demo showcases:
 
