@@ -13,24 +13,9 @@
 
 An intelligent quiz platform that adapts to your skill level in real-time, featuring momentum-based difficulty adjustment, streak multipliers, and live competitive leaderboards.
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Demo](#-demo) • [Architecture](#-architecture) • [API](#-api-reference) • [Documentation](#-documentation)
+[Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [API](#-api-reference) • [Documentation](#-documentation)
 
 </div>
-
----
-
-## 📹 Demo
-
-https://github.com/user-attachments/assets/d39c524d-a416-4fc5-940c-73825f7a9c42
-
-The demo showcases:
-
-- Adaptive difficulty adjustment in action
-- Streak system with score multipliers
-- Real-time leaderboard updates
-- Dark/Light mode toggle
-- Metrics dashboard walkthrough
-- Code architecture overview
 
 ---
 
@@ -96,13 +81,17 @@ The demo showcases:
 git clone https://github.com/VipinYadav16/BrainBolt.git
 cd BrainBolt
 
-# Start everything with one command
+# Create your own environment file (required)
+# Windows PowerShell:
+#   Copy-Item .env.example .env
+# macOS/Linux:
+#   cp .env.example .env
+
+# Fill in your Supabase values in .env, then start everything with one command
 docker-compose up --build
 ```
 
 **That's it!** Open http://localhost:8080
-
-> ✅ **No configuration needed!** The `.env` file with Supabase credentials is included in the repository for easy evaluation.
 
 ---
 
@@ -132,15 +121,15 @@ npm run dev
 cd server && npm run dev
 ```
 
-> ✅ **Environment is pre-configured!** The `.env` file is included with working Supabase credentials.
+> ℹ️ `.env` files are intentionally not committed. Use `.env.example` and `server/.env.example` to create your own.
 
 <details>
 <summary><b>🔐 Using your own Supabase project (optional)</b></summary>
 
-If you want to use your own Supabase instance:
+You must use your own Supabase instance:
 
 1. Create a project at https://supabase.com
-2. Update `.env` with your credentials:
+2. Create/update `.env` with your credentials (see `.env.example`):
    ```env
    VITE_SUPABASE_URL=https://your-project.supabase.co
    VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-key
@@ -362,7 +351,7 @@ brainbolt/
 ├── 📄 docker-compose.yml            # Container orchestration
 ├── 📄 Dockerfile                    # Frontend container
 ├── 📄 nginx.conf                    # Production web server config
-└── 📄 demo.mp4                      # Demo video (required)
+└── 📄 README.md                     # Project documentation
 ```
 
 ---
@@ -406,27 +395,44 @@ npm run test -- --coverage
 
 ## 🔧 Environment Variables
 
-> ✅ **Pre-configured!** The `.env` file is included in this repository with working Supabase credentials for easy evaluation. No setup required.
+This repository does **not** commit any `.env` files. Create your own using the provided templates:
+
+- Root (Docker Compose + frontend): `.env.example` → `.env`
+- Backend (local dev): `server/.env.example` → `server/.env`
+
+Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+Copy-Item server/.env.example server/.env
+```
+
+macOS/Linux:
+
+```bash
+cp .env.example .env
+cp server/.env.example server/.env
+```
 
 <details>
-<summary><b>Frontend (.env) - Already configured</b></summary>
+<summary><b>Frontend (.env)</b></summary>
 
-| Variable                        | Required | Description              | Status |
-| ------------------------------- | :------: | ------------------------ | :----: |
-| `VITE_SUPABASE_URL`             |    ✅    | Supabase project URL     | ✅ Set |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` |    ✅    | Supabase anon/public key | ✅ Set |
+| Variable                        | Required | Description              | Status  |
+| ------------------------------- | :------: | ------------------------ | :-----: |
+| `VITE_SUPABASE_URL`             |    ✅    | Supabase project URL     | You set |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` |    ✅    | Supabase anon/public key | You set |
 
 </details>
 
 <details>
-<summary><b>Backend (server/.env) - Already configured</b></summary>
+<summary><b>Backend (server/.env)</b></summary>
 
 | Variable               | Required | Description                                  |   Status    |
 | ---------------------- | :------: | -------------------------------------------- | :---------: |
-| `SUPABASE_URL`         |    ✅    | Supabase project URL                         |   ✅ Set    |
-| `SUPABASE_SERVICE_KEY` |    ✅    | Supabase service role key                    |   ✅ Set    |
-| `PORT`                 |    ❌    | Server port (default: 3001)                  |   ✅ Set    |
-| `FRONTEND_URL`         |    ❌    | CORS origin (default: http://localhost:8080) |   ✅ Set    |
+| `SUPABASE_URL`         |    ✅    | Supabase project URL                         |   You set   |
+| `SUPABASE_SERVICE_KEY` |    ✅    | Supabase service role key                    |   You set   |
+| `PORT`                 |    ❌    | Server port (default: 3001)                  |  Optional   |
+| `FRONTEND_URL`         |    ❌    | CORS origin (default: http://localhost:8080) |  Optional   |
 | `REDIS_URL`            |    ❌    | Redis connection URL                         | ❌ Optional |
 
 </details>
